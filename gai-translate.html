@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Multi-Language Translator</title>
+    <link rel="stylesheet" href="gai-translate.css" />
+    <script>
+      if (!isSecureContext) location.protocol = 'https:';
+    </script>
+    <script src="gai-translate.js" type="module"></script>
+  </head>
+  <body>
+    <h1>Multi-Language Translator - Uses the built-in Chrome AI</h1>
+    <div class="not-supported-message" hidden>
+      Your browser doesn't support the Translator or Language Detector APIs.
+    </div>
+    <form>
+      <label for="input">Input:</label>
+      <textarea id="input">Hello, world!</textarea>
+      <p>I'm <span>not sure what language this is</span>.</p>
+
+      <div id="language-selection">
+        <label for="languages"><strong>Translate to (choose one or more):</strong></label>
+        <div id="languages" class="lang-list" aria-label="Language selection" role="group"></div>
+      </div>
+      <div class="controls">
+        <button id="translate-button" type="button" class="button-style">Translate</button>
+        <button id="clear-button" type="button" class="button-style">Clear</button>
+        <div id="status" class="status" aria-live="polite"></div>
+      </div>
+    </form>
+    <div id="outputs-container"></div>
+    <footer>
+      Made by <a href="https://github.com/mattcuk/">@mattcuk</a>. Source code on
+      <a href="https://github.com/mattcuk/google-ai-multi-translate">GitHub</a>.
+    </footer>
+  </body>
+</html>
